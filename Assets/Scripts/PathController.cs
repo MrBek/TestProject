@@ -14,24 +14,13 @@ public class PathController : MonoBehaviour
     {
         splineComputer.type = Spline.Type.Linear;
         points = new SplinePoint[limit + 2];
-        points[0] = new SplinePoint();
-        points[0].position = startPoint.transform.position;
-        points[0].normal = Vector3.up;
-        points[0].size = 1f;
-        points[0].color = Color.white;
+        points[0] = new SplinePoint(startPoint.transform.position);
+
         for (int i = 0; i < limit; i++)
         {
-            points[i + 1] = new SplinePoint();
-            points[i + 1].position = new Vector3(Random.Range(0.0f, width), 0.0f, Random.Range(points[i].position.z, length / limit * (i + 1))); ;
-            points[i + 1].normal = Vector3.up;
-            points[i + 1].size = 1f;
-            points[i + 1].color = Color.white;
+            points[i + 1] = new SplinePoint(new Vector3(Random.Range(0.0f, width), 0.0f, Random.Range(points[i].position.z, length / limit * (i + 1))));
         }
-        points[limit + 1] = new SplinePoint();
-        points[limit + 1].position = endPoint.transform.position;
-        points[limit + 1].normal = Vector3.up;
-        points[limit + 1].size = 1f;
-        points[limit + 1].color = Color.white;
+        points[limit + 1] = new SplinePoint(endPoint.transform.position);
         splineComputer.SetPoints(points);
     }
     public void SetRoadData(float roadWidth)
