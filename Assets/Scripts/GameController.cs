@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
     }
     public void setupCamera()
     {
-        camController.setup(camDistance, camHeight, camSpeed);
+        camController.Setup(camDistance, camHeight, camSpeed);
     }
 
     public IEnumerator startGame()

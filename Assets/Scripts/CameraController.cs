@@ -9,11 +9,7 @@ public class CameraController : MonoBehaviour
     private float height = 3.0f;
     private float speed = 10.0f;
     // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-    public void setup(float distance, float height, float speed)
+    public void Setup(float distance, float height, float speed)
     {
         this.distance = distance;
         this.height = height;
